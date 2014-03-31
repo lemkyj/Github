@@ -1,0 +1,461 @@
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+body {
+	font-family: Helvetica, 'Open Sans', Arial, sans-serif;
+	font-size: 15px;
+	color: #333;
+	font-weight: 400;
+	background: #d0b6b5;
+}
+
+.containter {
+	max-width: 1080px;
+	margin: 0 auto;
+}
+
+h1,h2,h3 {
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+h1 {
+  font-size: 64px;
+  color: #555555;
+  margin: 10px 0px;
+}
+
+h2 {
+	font-size: 48px;
+	color: #c2c2c2;
+}
+
+h3 {
+  font-size: 32px;
+}
+
+h4 {
+  font-size: 24px;
+}
+
+
+/* Header */
+
+header {
+  width: 1080px;
+  margin: 0 auto;
+  background-color: #555555;
+  padding: 15px 0px;
+}
+
+#circle:before {
+  content:"";
+  position: absolute;
+  display:block;
+  top: 0px;
+  left: 30px;
+  width: 15px;
+  height: 15px;
+  -moz-border-radius: 50%; 
+  -webkit-border-radius: 50%; 
+  border-radius: 50%;
+  background: #b4b4b4;
+}  
+
+#circle {
+  position: relative;
+  width: 15px;
+  height: 15px;
+  left: 10px;
+  -moz-border-radius: 50%; 
+  -webkit-border-radius: 50%; 
+  border-radius: 50%;
+  background: #b4b4b4;
+  float: left;
+}
+
+#circle:after {
+  content:"";
+  position: absolute;
+  display:block;
+  top: 0px;
+  left: 60px;
+  width: 15px;
+  height: 15px;
+  -moz-border-radius: 50%; 
+  -webkit-border-radius: 50%; 
+  border-radius: 50%;
+  background: #b4b4b4;
+}  
+
+/* Header ends */
+
+
+/* Main nav */
+
+nav {
+  margin-top: 50px;
+  margin: 55px 0;
+  color: black;
+}
+
+nav ul {
+  text-align: center;
+}
+
+nav ul li {
+  display: inline;
+  font-size: 16px;
+  margin-right: 20px;
+  margin-top: -15px;
+}
+
+nav ul li a {
+	text-decoration: none;
+	color: #404040;
+
+  font-size:15px;
+  text-decoration:none;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  padding:3px;
+  width:100px;
+  text-shadow:1px 1px 1px #fff;
+}
+
+nav ul li a:hover {
+  background-color:#fff;
+  color:#444;
+  -moz-border-radius:5px;
+  -webkit-border-radius:5px;
+  border-radius:5px;
+  -moz-box-shadow:1px 1px 4px #666;
+  -webkit-box-shadow:1px 1px 4px #666;
+  box-shadow:1px 1px 4px #666;
+}
+
+/* Main nav ends */
+
+
+/* Section pages */
+
+section {
+  padding: 50px 0px;
+  width: 1080px;
+  margin: 0 auto;
+  background: white;
+}
+
+section#main {
+  position: relative;
+  background-color: #f2f2f2;
+  width: 1080px;
+  height: 900px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 150px 0px;
+}
+
+section#main2 {
+  position: relative;
+  background-color: #f2f2f2;
+  width: 1080px;
+  height: 100%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 150px 0px;
+}
+
+section#about {
+  background: #7ec9ab;
+  width: 1080px;
+  height: 1850px;
+}
+
+section#gallery {
+  background: #ecf0f1;
+  width: 1080px;
+  height: 1500px;
+  padding: 50px 0px;
+}
+
+/* Section page ends */
+
+
+
+/* Youtube video */
+
+#weirdYoutube {
+  width: 640px;
+  padding-top: 65px;
+  padding-bottom: 25px;
+  margin: 0 auto;
+}
+
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+}
+.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Youtube video ends */
+
+
+/* inside about page */
+
+#leftabout {
+  width: 500px;
+  margin-top: 10px;
+  text-align: center;
+  float: left;
+}
+
+#rightabout {
+  width: 435px;
+  padding-top: 0px;
+  margin-right: 60px;
+  line-height: 2;
+  float: right;
+}
+
+#profilepic {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -50px;
+  margin-bottom: 100px;
+  width: 100%;
+}
+
+
+#leftabout ul li {
+  list-style-type: none;
+  padding-top: 10px;
+}
+
+/* inside about page ends */
+
+
+/* Gallery */
+
+ul#galUl li {
+  display: inline-block;
+  width: 300px;
+  margin: 15px 100px;
+}
+
+/* Gallery ends */
+
+
+
+/* Mediaquery */
+
+
+@media screen and (min-width: 480px) and (max-width: 900px) {
+
+  .container {
+  max-width: 900px;
+  }
+
+  h1,h2,h3 {
+    font-weight: bold;
+    margin: 5px 0;
+  }
+
+  h1 {
+    font-size: 64px;
+    color: #555555;
+    margin: 5px 0px;
+  }
+
+  h2 {
+    font-size: 48px;
+    color: #c2c2c2;
+  }
+
+  h3 {
+    font-size: 32px;
+  }
+
+  h4 {
+    font-size: 24px;
+  }
+
+  header {
+    width: 900px;
+    background-color: #555555;
+    padding: 15px 0px;
+  }
+
+  section {
+    padding: 50px 0px;
+    width: 900px;
+    margin: 0 auto;
+    background: white;
+  }
+
+  section#main {
+    width: 900px;
+    height: 900px;
+    margin: 0 auto;
+    padding: 150px 0px;
+  }
+
+  section#main2 {
+    width: 900px;
+    height: 100%;
+    padding: 150px 0px;
+  }
+
+  section#about {
+    background: #7ec9ab;
+    width: 900px;
+    height: 1850px;
+  }
+
+  section#gallery {
+    background: #ecf0f1;
+    width: 900px;
+    height: 1500px;
+    padding: 50px 0px;
+  }
+
+  #leftabout {
+    width: 400px;
+    margin-top: 10px;
+    text-align: center;
+    float: left;
+  }
+
+  #rightabout {
+    width: 400px;
+    padding-top: 0px;
+    margin-right: 45px;
+    line-height: 2;
+    float: right;
+  }
+  
+  ul#galUl li {
+    display: inline-block;
+    width: 300px;
+    margin: 15px 58px;
+  }
+
+
+}
+
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+
+  .container {
+    max-width:480px;
+  }
+
+  h1,h2,h3 {
+    font-weight: bold;
+    margin: 5px 0;
+  }
+
+  h1 {
+    font-size: 32px;
+    color: #555555;
+    margin: 5px 0px;
+  }
+
+  h2 {
+    font-size: 24px;
+    color: #c2c2c2;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  h4 {
+    font-size: 18px;
+  }
+
+  header {
+    width: 480px;
+    background-color: #555555;
+    padding: 15px 0px;
+  }
+
+  #weirdYoutube {
+  width: 320px;
+  padding-top: 65px;
+  padding-bottom: 25px;
+  margin: 0 auto;
+}
+
+  section {
+    padding: 50px 0px;
+    width: 480px;
+    margin: 0 auto;
+    background: white;
+  }
+
+  section#main {
+    width: 480px;
+    height: 100%inherit;
+    margin: 0 auto;
+    padding: 150px 0px;
+  }
+
+  section#main2 {
+    width: 480px;
+    height: 100%;
+    padding: 150px 0px;
+  }
+
+  section#about {
+    background: #7ec9ab;
+    width: 480px;
+    height: 2300px;
+  }
+
+  section#gallery {
+    background: #ecf0f1;
+    width: 480px;
+    height: 2820px;
+    padding: 50px 0px;
+  }
+
+  #leftabout {
+    width: 430px;
+    margin-top: 10px;
+    text-align: center;
+    clear: both;
+  }
+
+  #rightabout {
+    width: 400px;
+    margin-top: 20px;
+    margin-right: 35px;
+    line-height: 2;
+    clear: both;
+  }
+  
+  ul#galUl li {
+    display: inline-block;
+    width: 300px;
+    margin: 15px 50px;
+  }
+
+
+
+
+}
