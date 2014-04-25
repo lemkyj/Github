@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Visualizer</title>
+  <meta charset="utf-8">
+	<link rel="stylesheet" href="styles/normalize.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="styles/main.css" type="text/css" media="screen" />
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="js/jquery.simple-text-rotator.js"></script>
+  <script type="text/javascript" src="js/jquery.label_better.js"></script>
+  <script src="js/animatescroll.js"></script>
+  <link rel="stylesheet" type="text/css" href="styles/simpletextrotator.css" />
+  <script>
+
+  /* simple text rotator plug-in */
+    $(document).ready(function(){
+      $(".demo1 .rotate").textrotator({
+        animation: "flipCube",
+        speed: 2200
+      });
+    });
+
+    $(document).ready(function(){
+      $(".demo2 .rotate").textrotator({
+        animation: "spin",
+        speed: 3800
+      });
+    });
+
+    $(document).ready(function(){
+      $(".demo3 .rotate").textrotator({
+        animation: "flip",
+        speed: 3000
+      });
+    });
+
+/* label better plug-in */
+        $(document).ready( function() {
+      $(".label_better").label_better({
+        easing: "bounce"
+      });
+    });
+
+
+/* easteregg(my thing) starts*/
+
+/* easter section show/hide */
+$(function(){
+  $('h2.shake').hover(function (){
+    $('#easter').show(600);
+  });
+});
+
+/* Treble clef show/hide */
+$(function(){
+  $('#easter').hover(function (){
+    $('#keysig').css('display', 'block');
+  }, function(){
+    $('#keysig').css('display', 'none');
+  });
+});
+
+/* notes show/hide */
+$(function(){
+  $('#easter').hover(function (){
+    $('.notes_opacity').attr('class', 'notes');
+  }, function(){
+    $('.notes').attr('class', 'notes_opacity');
+  });
+
+});
+
+
+  /* sound trigger */
+var html5_audiotypes={ 
+  "mp3": "audio/mpeg",
+  "mp4": "audio/mp4",
+  "ogg": "audio/ogg",
+  "wav": "audio/wav"
+}
+
+function createsoundbite(sound){
+  var html5audio=document.createElement('audio')
+  if (html5audio.canPlayType){ //check support for HTML5 audio
+    for (var i=0; i<arguments.length; i++){
+      var sourceel=document.createElement('source')
+      sourceel.setAttribute('src', arguments[i])
+      if (arguments[i].match(/\.(\w+)$/i))
+        sourceel.setAttribute('type', html5_audiotypes[RegExp.$1])
+      html5audio.appendChild(sourceel)
+    }
+    html5audio.load()
+    html5audio.playclip=function(){
+      html5audio.pause()
+      html5audio.currentTime=0
+      html5audio.play()
+    }
+    return html5audio
+  }
+  else{
+    return {playclip:function(){throw new Error("Your browser doesn't support HTML5 audio unfortunately")}}
+  }
+}
+
+//Initialize two sound clips with 1 fallback file each:
+
+var mouseoversound=createsoundbite("hover.ogg", "hover.mp3")
+var clicksound=createsoundbite("click.ogg", "click.mp3")
+var loadingsound=createsoundbite("loading.ogg", "loading.mp3")
+var easteregg1=createsoundbite("song1.mp3")
+var easteregg2=createsoundbite("song2.mp3")
+var easteregg3=createsoundbite("song3.mp3")
+var easteregg4=createsoundbite("song4.mp3")
+  </script>
+</head>
+
+	<body>
+      <section id="easter">
+        <img src="images/keysig.gif" id="keysig">
+        <img id="note1" class="notes_opacity" onclick="easteregg1.playclip()" src="images/note1.gif"></a>
+        <img id="note2" class="notes_opacity" onclick="easteregg2.playclip()" src="images/note2.gif">
+        <img id="note3" class="notes_opacity" onclick="easteregg3.playclip()" src="images/note3.gif">
+        <img id="note4" class="notes_opacity" onclick="easteregg4.playclip()" src="images/note1.gif">
+      </section> <!-- easteregg -->
+
+		<header>
+			<div class="container">
+				<nav>
+          <div id="logo"></div>  
+					<ul id="topnav">
+						<li><a href="#" onmouseover="mouseoversound.playclip()" onclick="$('#landing').animatescroll(), clicksound.playclip()">home</a></li>
+						<li><a href="#" onmouseover="mouseoversound.playclip()" onclick="$('#feature1').animatescroll(), clicksound.playclip();">features</a></li>
+						<li><a href="#" onmouseover="mouseoversound.playclip()" onclick="$('#contact').animatescroll(), clicksound.playclip();">subscribe</a></li>
+					</ul>
+				</nav>
+			</div>
+    </header>			
+    
+    <section id="landing">
+			<div class="container">
+				<div id="profile"></div>
+
+        <h2 class="shake" onmouseover="loadingsound.playclip()">Best plug-in for developers</h2>
+        <h1 class="demo1">Visualize your <span class="rotate">codes, idea, goal</span></h1>
+        <div id="download">Buy now</div>
+			</div>
+		</section>
+
+	  <section id="feature1">
+			<div class="container">
+        <div id="sublime"></div>
+        <h2>- Visualize - </h2>
+        <p class="demo2"><span class="rotate">Just Drag codes you want to see! It will show how it look like., You don't need to open a browser to see how it work</span></p>
+						
+			</div>
+		</section>
+
+	  <section id="feature2">
+      <div class="container">
+        <div id="responsive"></div>
+        <h2>- Responsive test - </h2>
+        <p class="demo3"><span class="rotate">Visualizer provide a great simulator for millions of mobile device, iphone. galaxy. htc... we have every templetes you can imagine</span></p>
+      </div>     
+
+    </section> 
+
+    <section id="feature3">
+      <div class="container">
+        <h2>Support list</h2>
+  
+        <ul id="list1">
+          <li>Sublime Text</li>
+          <li>Webstorm</li>
+          <li>EditPlus</li>
+          <li>UltraEdit</li>
+          <li>Notepad++</li>
+        </ul>
+        <ul id="list2">
+          <li>Aptana</li>
+          <li>BBEdit</li>
+          <li>BlueFish</li>
+          <li>Brackets</li>
+          <li>Coda</li>
+        </ul>
+
+      </div>
+
+    </section>
+
+		<footer id="contact">
+      <div class="container">
+  			<h2>subscribe for updates<h2>
+           <form class="bl_form">
+              <input type="text" class="label_better" placeholder="Username" data-position="top">
+              <input type="email" class="label_better" placeholder="Email Address" data-position="top">
+              <input type="submit" value="SEND" onClick="alert('Complete!')">
+          </form>
+		  </div>
+    </footer>
+</body>
+</html>
